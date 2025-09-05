@@ -29,7 +29,7 @@ echo "## Topics Messages"
 while read -r package; do
   types=$(rosmsg package $package)
   echo ""
-  echo "<h3 id=\"$package\">"
+  echo "<h3 id=\"msg-$package\">"
   echo "    <code>$package</code>"
   echo "</h3>"
   echo ""
@@ -54,7 +54,7 @@ while read -r package; do
     echo "\`\`\`"
     echo ""
     
-    echo "[topics](#topics) | [pacakge \`$package\`](#$package)"
+    echo "[topics](#topics) | [pacakge \`$package\`](#msg-$package)"
     echo ""
 
   done <<< "$types"
@@ -66,7 +66,7 @@ echo "## Services Messages"
 while read -r package; do
   types=$(rossrv package $package)
   echo ""
-  echo "<h3 id=\"$package\">"
+  echo "<h3 id=\"srv-$package\">"
   echo "    <code>$package</code>"
   echo "</h3>"
   echo ""
@@ -89,7 +89,7 @@ while read -r package; do
     echo "\`\`\`"
     echo ""
 
-    echo "[services](#services) | [pacakge \`$package\`](#$package)"
+    echo "[services](#services) | [pacakge \`$package\`](#srv-$package)"
     echo ""
 
   done <<< "$types"
